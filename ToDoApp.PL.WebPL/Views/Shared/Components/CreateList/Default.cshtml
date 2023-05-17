@@ -1,0 +1,9 @@
+﻿@model ToDoApp.PL.WebPL.Models.ToDoList.CreateToDoListVM
+
+<hr class="line-in-menu">
+<form method="post" asp-controller="Home" asp-action="Create" class="form-list">
+    <h3>New list</h3>
+    <input asp-for="Name" required="required" maxlength="50">
+    <button type="submit" class="btn primary w-full">Create</button>
+</form>
+                

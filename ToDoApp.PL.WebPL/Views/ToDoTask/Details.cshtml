@@ -1,0 +1,64 @@
+﻿@model ToDoTaskDetailsVM
+
+@{
+    Layout = "_LayoutTasks";
+    ViewData["Title"] = Model.Title + " steps";
+}
+
+<div class="open-list">
+    <h4 class="task-title ml-100 mt-20">@Model.Title</h4>
+    <div class="block-info mt-20">
+        <div class="block-tasks ml-100">
+            @if (Model.steps != null && Model.steps.Any()) 
+            {
+                @foreach (var step in Model.steps.Where(s=>s.IsCompleted == false))
+                {
+                    <div class="task-item">
+                        <div class="task-top-info">
+                            <h4>@step.Description</h4>
+                            <div class="step-icons complited">
+                                <form class="btn-method" method="post" asp-controller="ToDoTaskStep" asp-action="MarkCompleted" asp-route-id="@step.Id" asp-route-taskId="@ViewBag.TaskId">
+                                    <button class="btn inform" type="submit">
+                                        <i class="fa fa-check-circle-o"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="btn-div">
+                            <a class="btn primary w-6-12" asp-controller="ToDoTaskStep" asp-action="Edit" asp-route-id="@step.Id" asp-route-taskId="@ViewBag.TaskId">Rename</a>
+                            <a class="btn danger w-6-12" asp-controller="ToDoTaskStep" asp-action="Delete" asp-route-id="@step.Id" asp-route-taskId="@ViewBag.TaskId">Delete</a>
+                        </div>   
+                    </div>
+                }
+                if (Model.steps.Where(s => s.IsCompleted == true).Any())
+                {
+                    <h3 style="margin-left: 22px; font-size: 24px; color:crimson">Complited</h3>
+                    @foreach (var step in Model.steps.Where(s => s.IsCompleted == true))
+                    {
+                        <div class="task-item">
+                            <div class="task-top-info">
+                                <h4>@step.Description</h4>
+                                <div class="step-icons complited">
+                                    <form class="btn-method" method="post" asp-controller="ToDoTaskStep" asp-action="MarkCompleted" asp-route-id="@step.Id" asp-route-taskId="@ViewBag.TaskId">
+                                        <button class="btn inform" type="submit">
+                                            <i class="fa fa-check-circle"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="btn-div">
+                                <a class="btn danger w-6-12" asp-controller="ToDoTaskStep" asp-action="Delete" asp-route-id="@step.Id" asp-route-taskId="@ViewBag.TaskId">Delete</a>
+                            </div>   
+                        </div>
+                    }
+
+                }
+            }
+            else
+            {
+                <h3 style="margin-left: 22px; font-size: 24px; color:crimson">Nothing here yet...</h3>
+            }
+        </div>
+        @await Component.InvokeAsync("CreateStep")
+    </div>
+</div>

@@ -1,0 +1,12 @@
+﻿@model ToDoApp.PL.WebPL.Models.ToDoList.CreateToDoListVM
+
+@{
+    Layout = "_LayoutEdit";
+    ViewData["Title"] = "Rename list";
+}
+
+<form asp-controller="Home" asp-action="Edit" class="form-update">
+    <h3>New name</h3>
+    <input asp-for="Name" class="input-border w-full">
+    <button type="submit" class="btn primary w-full">Rename</button>
+</form>

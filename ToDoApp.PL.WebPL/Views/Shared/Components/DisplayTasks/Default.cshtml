@@ -1,0 +1,19 @@
+﻿@model IEnumerable<DisplayToDoTaskVM>
+
+<h4>Tasks</h4>
+<div class="lists-item">
+    @if (Model != null)
+    {
+        @foreach (var task in Model)
+        {
+            <div class="item">
+                <a class="link" asp-controller="ToDoTask" asp-action="Details" asp-route-id="@task.Id" asp-route-list="@ViewBag.ListId"><h4 class="task-title">@task.Title</h4></a>
+                <hr class="task-line">
+                <div class="btn-div">
+                    <a class="btn primary" asp-controller="ToDoTask" asp-action="EditTitle" asp-route-id="@task.Id">Rename</a>
+                    <a class="btn danger" asp-controller="ToDoTask" asp-action="Delete" asp-route-id="@task.Id">Delete</a>
+                </div>
+            </div>
+        }
+    }
+</div>

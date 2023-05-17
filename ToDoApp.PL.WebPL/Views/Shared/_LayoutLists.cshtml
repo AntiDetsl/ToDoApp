@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ToDoApp.PL.WebPL</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/">
+                <h3 class="logo">ToDoList</h3>
+            </a>
+        </div>
+    </header>
+    <main>
+         <div class="screen">
+             <div class="list-menu">
+                @await Component.InvokeAsync("DisplayLists", new {listsVM = ViewData["listsVM"]})
+                @await Component.InvokeAsync("CreateList")
+             </div>
+             @RenderBody()
+         </div>
+    </main>
+</body>
+</html>

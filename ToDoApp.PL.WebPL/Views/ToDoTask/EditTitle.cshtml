@@ -1,0 +1,12 @@
+﻿@model EditNameVM
+
+@{
+    Layout = "_LayoutEdit";
+    ViewData["Title"] = "Change title";
+}
+
+<form asp-controller="ToDoTask" asp-action="EditTitle" asp-route-id="@Model.id" class="form-update">
+    <h3>Change title</h3>
+    <input type="text" asp-for="Title" class="input-border w-full">
+    <button type="submit" class="btn primary w-full">Rename</button>
+</form>

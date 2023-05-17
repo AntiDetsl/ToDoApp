@@ -1,0 +1,12 @@
+﻿@model EditNameVM
+
+@{
+    Layout = "_LayoutEdit";
+    ViewData["Title"] = "Change step description";
+}
+
+<form asp-controller="ToDoTaskStep" asp-action="Edit" asp-route-id="@Model.id" asp-route-taskId="@ViewBag.TaskId" class="form-update">
+    <h3>Change step description</h3>
+    <input type="text" value="@Model.Title" name="desc" class="input-border w-full">
+    <button type="submit" class="btn primary w-full">Change</button>
+</form>

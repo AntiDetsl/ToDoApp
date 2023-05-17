@@ -1,0 +1,20 @@
+﻿@model DateTime?
+@{
+    ViewData["Title"] = "Change Goal Date";
+    Layout = "_LayoutEdit";
+}
+
+<form asp-controller="ToDoTask" asp-action="EditGoalDate" class="form-update">
+    <h3>New due date</h3>
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    @if (Model.HasValue)
+    {
+        <input name="taskGoalDate" type="date" class="input-border w-full" value="@Model.Value">
+    }
+    else
+    {
+        <input name="taskGoalDate" type="date" class="input-border w-full">
+    }
+    <button type="submit" class="btn primary w-full">Change</button>
+</form>
+

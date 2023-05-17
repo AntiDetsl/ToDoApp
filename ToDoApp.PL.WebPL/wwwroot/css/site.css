@@ -1,0 +1,265 @@
+body {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+btn-div > a:visited {
+    color: white;
+}
+
+.link {
+    color: black;
+}
+
+    .link:hover {
+        color: cornflowerblue;
+    }
+
+.container {
+    width: 1300px;
+    min-width: 340px;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    height: 60px;
+    background-color: cornflowerblue;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+}
+
+.list-menu {
+    height: calc(100vh + 100vh);
+    width: 25%;
+    background-color: #e9e9e9;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.lists-item {
+    display: block;
+    width: 280px;
+    height: fit-content;
+    margin-top: 10px;
+}
+
+.item {
+    background-color: white;
+    width: 260px;
+    height: 100px;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.task-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.task-line {
+    height: 1px;
+    background-color: black;
+    border: 1px solid black;
+}
+
+.btn-div {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn {
+    width: 120px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    border: 0;
+}
+
+.primary {
+    background-color: cornflowerblue;
+    color: white;
+}
+
+.danger {
+    background-color: crimson;
+    color: white;
+}
+
+.primary:hover, .danger:hover {
+    color: black;
+}
+
+.line-in-menu {
+    width: 280px;
+    margin: 0 0 20px;
+    height: 0.2px;
+    background-color: grey;
+    border: 1px solid grey;
+}
+
+.form-list {
+    display: block;
+    width: 280px;
+}
+
+.form-task {
+    width: 60%;
+    margin: 20px auto;
+}
+
+.form-update {
+    width: 100%;
+    margin: 0;
+}
+
+input {
+    width: 100%;
+    height: 30px;
+    border-radius: 6px;
+    border: 0;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.input-border {
+    border: 1px solid black;
+}
+
+.w-full {
+    width: 100% !important;
+}
+
+.w-6-12 {
+    width: 50% !important;
+}
+
+.screen {
+    width: 100%;
+    height: 100% !important;
+    display: flex;
+}
+
+.open-list {
+    width: 100%;
+    background-color: #dddddd;
+}
+
+.ml-100 {
+    margin-left: 100px;
+}
+
+.mr-100 {
+    margin-right: 100px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.block-info {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    gap: 50px;
+}
+
+.block-tasks, .block-form {
+    width: 50%;
+    height: fit-content;
+    background-color: white;
+    border-radius: 6px;
+    border: 0;
+}
+
+.task-item {
+    width: 90%;
+    height: fit-content;
+    margin: 20px auto;
+    border-radius: 6px;
+    display: block;
+}
+
+.task-top-info, .task-bottom-info {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.task-icons {
+    width: 100px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.complited {
+    width: fit-content;
+}
+
+.step-icons {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date-text {
+    font-size: 16px;
+}
+
+.btn-method {
+    width: fit-content;
+    height: fit-content;
+}
+
+.inform {
+    width: 20px !important;
+    height: 40px !important;
+    padding: 0 !important;
+    background-color: white;
+    color: cornflowerblue;
+    font-size: 16px;
+}
+
+.inform:hover {
+    color: black;
+}
+
+.inform:visited {
+    color: cornflowerblue;
+}

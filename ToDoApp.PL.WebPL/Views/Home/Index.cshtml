@@ -1,0 +1,63 @@
+﻿@model (IEnumerable<DisplayToDoListVM>, IEnumerable<DisplayTodayToDoTaskVM>)
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "ToDo List";
+}
+
+<!DOCTYPE html>
+<html>
+    <div class="list-menu">
+        <h4>Lists</h4>
+        <div class="lists-item">
+            @foreach(var list in Model.Item1)
+            {
+            <div class="item">
+                <a asp-controller="ToDoTask" asp-action="Index" asp-route-id="@list.Id" class="link"><h4 class="task-title">@list.Name</h4></a>
+                <hr class="task-line">
+                <div class="btn-div">
+                    <a class="btn primary" asp-controller="Home" asp-action="Edit" asp-route-id="@list.Id">Rename</a>
+                    <a class="btn danger" asp-controller="Home" asp-action="Delete" asp-route-id="@list.Id">Delete</a>
+                </div>
+            </div>
+            }
+        </div>
+        @await Component.InvokeAsync("CreateList")
+    </div>
+    <div class="open-list">
+    @if (!Model.Item2.Any())
+    {
+        <h3 style="margin-left: 22px; font-size: 24px; color:crimson">Nothing for today...</h3>
+    }
+    else
+    {
+        <h3 style="margin-left: 22px; font-size: 24px; color:crimson">Tasks planed for today</h3>
+    }
+    <div class="block-info mt-20">
+        <div class="block-tasks ml-100">
+            @foreach(var task in Model.Item2)
+            {
+            <div class="task-item">
+                <div class="task-top-info">
+                    <a asp-controller="ToDoTask" asp-action="Details" asp-route-id="@task.Id" asp-route-listId="@ViewBag.ListId" class="link">
+                        <h4>@task.Title</h4>
+                    </a>
+                    <h4>from list</h4>
+                    <a asp-controller="ToDoTask" asp-action="Index" asp-route-id="@task.ListId" class="link">
+                        <h4>@task.ListName</h4>
+                    </a>
+                </div>
+                <div class="task-bottom-info">
+                    <p class="date-text">Goal Date: @task.DueDate.ToString("d")</p>
+                    @if(task.Reminder.HasValue)
+                    {
+                        <p class="date-text">Reminder Date: @task.Reminder.Value.ToString("g")</p>
+                    }
+                    else
+                    {
+                        <p class="date-text">Reminder Date: not set</p>    
+                    }
+                </div>  
+            </div>
+            }
+        </div>
+</html>

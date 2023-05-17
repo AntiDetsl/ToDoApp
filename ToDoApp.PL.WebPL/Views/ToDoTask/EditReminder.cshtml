@@ -1,0 +1,20 @@
+﻿@model DateTime?
+@{
+    ViewData["Title"] = "Change reminder";
+    Layout = "_LayoutEdit";
+}
+
+<form asp-controller="ToDoTask" asp-action="EditReminder" class="form-update">
+    <h3>Set new reminder</h3>
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    @if (Model.HasValue)
+    {
+        <input name="reminder" type="datetime" class="input-border w-full" value="@Model">
+    }
+    else
+    {
+        <input name="reminder" type="datetime" class="input-border w-full">
+    }
+    <button type="submit" class="btn primary w-full">Set</button>
+</form>
+

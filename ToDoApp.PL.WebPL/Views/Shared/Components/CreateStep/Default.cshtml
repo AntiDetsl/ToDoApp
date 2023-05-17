@@ -1,0 +1,7 @@
+﻿<div class="block-form mr-100">
+    <form method="post" asp-controller="ToDoTaskStep" asp-action="Create" asp-route-id="@ViewBag.TaskId" class="form-task">
+        <h3>Add new step</h3>
+        <input class="input-border" name="desc" type="text" maxlength="100">
+        <button type="submit" class="btn primary w-full">Add</button>
+    </form>
+</div>

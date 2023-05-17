@@ -1,0 +1,13 @@
+﻿@model CreateToDoTaskVM
+
+<div class="block-form mr-100">
+    <form method="post" asp-controller="ToDoTask" asp-action="Create" asp-route-id="@ViewBag.ListId" class="form-task">
+        <h3>Task Name</h3>
+        <input class="input-border" asp-for="Title">
+        <h3>Goal Date</h3>
+        <input class="input-border" asp-for="DueDate">
+        <h3>Reminder Date</h3>
+        <input class="input-border" asp-for="TaskReminderDateTime">
+        <button type="submit" class="btn primary w-full">Add Task</button>
+    </form>
+</div>
